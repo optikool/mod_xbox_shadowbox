@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" version="2.5.0" method="upgrade">
+	<name>XBox Shadowbox</name>
+	<author>Dana Harris</author>
+	<creationDate>September 2011></creationDate>
+	<copyright>Copyright (C) 2011 Optikool.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>optikool@yahoo.com</authorEmail>
+	<authorUrl>http://www.optikool.com/</authorUrl>
+	<version>1.0</version>
+    <description>XBox Shadowbox is a Shadowbox plugin for Joomla that allows you to display media in Shadowbox.</description>
+	<files>
+		<filename module="mod_xbox_shadowbox">mod_xbox_shadowbox.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>mod_xbox_shadowbox.xml</filename>		
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>languages</folder>
+    	<folder>shadowbox-base</folder>
+		<folder>shadowbox-dojo</folder>
+		<folder>shadowbox-ext</folder>
+		<folder>shadowbox-jquery</folder>
+		<folder>shadowbox-mootools</folder>
+		<folder>shadowbox-prototype</folder>
+		<folder>shadowbox-yui</folder>		
+	</files>
+	<languages folder="languages">
+    	<language tag="en-GB">en-GB.mod_xbox_shadowbox.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">	
+				<field name="adapter" type="list" default="base" label="MOD_XBOX_SHADOWBOX_ADAPTER_NAME" description="MOD_XBOX_SHADOWBOX_ADAPTER_DESC">
+					<option value="base">MOD_XBOX_SHADOWBOX_ADAPTER_BASE</option>
+					<option value="prototype">MOD_XBOX_SHADOWBOX_ADAPTER_PROTOTYPE</option>
+					<option value="jquery">MOD_XBOX_SHADOWBOX_ADAPTER_JQUERY</option>
+					<option value="mootools">MOD_XBOX_SHADOWBOX_ADAPTER_MOOTOOLS</option>
+					<option value="dojo">MOD_XBOX_SHADOWBOX_ADAPTER_DOJO</option>
+					<option value="yui">MOD_XBOX_SHADOWBOX_ADAPTER_YUI</option>
+					<option value="ext">MOD_XBOX_SHADOWBOX_ADAPTER_EXT</option>
+				</field>
+				<!--
+				<field name="language" type="list" default="en" label="SHADOWBOX_LANGUAGE_NAME" description="SHADOWBOX_LANGUAGE_DESC">
+		            <option value="ar">SHADOWBOX_LANGUAGE_ARABIC</option>
+		            <option value="ca">SHADOWBOX_LANGUAGE_CATALAN</option>
+		            <option value="cs">SHADOWBOX_LANGUAGE_CZECH</option>
+		            <option value="da">SHADOWBOX_LANGUAGE_DANISH</option>
+		            <option value="de-CH">SHADOWBOX_LANGUAGE_GERMAN_SWISS</option>
+		            <option value="de-DE">SHADOWBOX_LANGUAGE_GERMAN</option>
+		            <option value="en">SHADOWBOX_LANGUAGE_ENGLISH</option>
+		            <option value="es">SHADOWBOX_LANGUAGE_SPANISH</option>
+		            <option value="et">SHADOWBOX_LANGUAGE_ESTONIAN</option>
+		            <option value="fi">SHADOWBOX_LANGUAGE_FINNISH</option>
+		            <option value="fr">SHADOWBOX_LANGUAGE_FRENCH</option>
+		            <option value="gl">SHADOWBOX_LANGUAGE_GALICIAN</option>
+		            <option value="he">SHADOWBOX_LANGUAGE_HEBREW</option>
+		            <option value="hu">SHADOWBOX_LANGUAGE_HUNGARIAN</option>
+		            <option value="id">SHADOWBOX_LANGUAGE_INDONESIAN</option>
+		            <option value="is">SHADOWBOX_LANGUAGE_ICELANDIC</option>
+		            <option value="it">SHADOWBOX_LANGUAGE_ITALIAN</option>
+		            <option value="ja">SHADOWBOX_LANGUAGE_JAPANESE</option>
+		            <option value="ko">SHADOWBOX_LANGUAGE_KOREAN</option>
+		            <option value="my">SHADOWBOX_LANGUAGE_BURMESE</option>
+		            <option value="nl">SHADOWBOX_LANGUAGE_DUTCH</option>
+		            <option value="no">SHADOWBOX_LANGUAGE_NORWEGIAN</option>
+		            <option value="pl">SHADOWBOX_LANGUAGE_POLISH</option>
+		            <option value="pt-BR">SHADOWBOX_LANGUAGE_PORTUGUESE_BRAZILIAN</option>
+		            <option value="pt-PT">SHADOWBOX_LANGUAGE_PORTUGUESE</option>
+		            <option value="ro">SHADOWBOX_LANGUAGE_ROMANIAN</option>
+		            <option value="ru">SHADOWBOX_LANGUAGE_RUSSIAN</option>
+		            <option value="sk">SHADOWBOX_LANGUAGE_SLOVAK</option>
+		            <option value="sv">SHADOWBOX_LANGUAGE_SWEDISH</option>
+		            <option value="tr">SHADOWBOX_LANGUAGE_TURKISH</option>
+		            <option value="zh-CN">SHADOWBOX_LANGUAGE_CHINESE_SIMPLIFIED</option>
+		            <option value="zh-TW">SHADOWBOX_LANGUAGE_CHINESE_TRADITIONAL</option>
+				</field> 
+		       -->
+			   <field name="load_adapter" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_LOAD_ADAPTER" description="MOD_XBOX_SHADOWBOX_LOAD_ADAPTER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="imgPlayer" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_IMGPLAYER_NAME" description="MOD_XBOX_SHADOWBOX_IMGPLAYER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="swfPlayer" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_SWFPLAYER_NAME" description="MOD_XBOX_SHADOWBOX_SWFPLAYER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="flvPlayer" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_FLVPLAYER_NAME" description="MOD_XBOX_SHADOWBOX_FLVPLAYER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="qtPlayer" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_QTPLAYER_NAME" description="MOD_XBOX_SHADOWBOX_QTPLAYER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="wmpPlayer" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_WMPPLAYER_NAME" description="MOD_XBOX_SHADOWBOX_WMPPLAYER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="iframePlayer" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_IFRAMEPLAYER_NAME" description="MOD_XBOX_SHADOWBOX_IFRAMEPLAYER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="htmlPlayer" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_HTMLPLAYER_NAME" description="MOD_XBOX_SHADOWBOX_HTMLPLAYER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+						
+				<field name="spacer1" type="spacer" hr="true" />
+				
+				<field name="autoDimensions" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_AUTODIMENSIONS_NAME" description="MOD_XBOX_SHADOWBOX_AUTODIMENSIONS_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="initialHeight" type="text" default="160" label="MOD_XBOX_SHADOWBOX_INITIALHEIGHT_NAME" description="MOD_XBOX_SHADOWBOX_INITIALHEIGHT_DESC" size="4" />
+				<field name="initialWidth" type="text" default="320" label="MOD_XBOX_SHADOWBOX_INITIALWIDTH_NAME" description="MOD_XBOX_SHADOWBOX_INITIALWIDTH_DESC" size="4" />
+				<field name="viewportPadding" type="text" default="20" label="MOD_XBOX_SHADOWBOX_VIEWPORTPADDING_NAME" description="MOD_XBOX_SHADOWBOX_VIEWPORTPADDING_DESC" size="3" />
+				
+				<field name="spacer2" type="spacer" hr="true" />
+				
+				<field name="showOverlay" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_SHOWOVERLAY_NAME" description="MOD_XBOX_SHADOWBOX_SHOWOVERLAY_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="overlayColor" type="text" default="#000" label="MOD_XBOX_SHADOWBOX_OVERLAYCOLOR_NAME" description="MOD_XBOX_SHADOWBOX_OVERLAYCOLOR_DESC" size="7" />
+				<field name="overlayOpacity" type="text" default="0.8" label="MOD_XBOX_SHADOWBOX_OVERLAYOPACITY_NAME" description="MOD_XBOX_SHADOWBOX_OVERLAYOPACITY_DESC" size="4" />
+				<field name="modal" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_MODAL_NAME" description="MOD_XBOX_SHADOWBOX_MODAL_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+			</fieldset>
+	
+			<fieldset name="advanced">
+				<field name="handleOversize" type="radio" default="resize" label="MOD_XBOX_SHADOWBOX_HANDLEOVERSIZE_NAME" description="MOD_XBOX_SHADOWBOX_HANDLEOVERSIZE_DESC">
+					<option value="none">MOD_XBOX_SHADOWBOX_HANDLEOVERSIZE_NONE</option>
+					<option value="resize">MOD_XBOX_SHADOWBOX_HANDLEOVERSIZE_RESIZE</option>
+					<option value="drag">MOD_XBOX_SHADOWBOX_HANDLEOVERSIZE_DRAG</option>
+				</field>
+				<field name="handleUnsupported" type="radio" default="link" label="MOD_XBOX_SHADOWBOX_HANDLEUNSUPPORTED_NAME" description="MOD_XBOX_SHADOWBOX_HANDLEUNSUPPORTED_DESC">
+					<option value="link">MOD_XBOX_SHADOWBOX_HANDLEUNSUPPORTED_LINK</option>
+					<option value="remove">MOD_XBOX_SHADOWBOX_HANDLEUNSUPPORTED_REMOVE</option>
+				</field>
+				<field name="continuous" type="radio" default="0" label="MOD_XBOX_SHADOWBOX_CONTINUOUS_NAME" description="MOD_XBOX_SHADOWBOX_CONTINUOUS_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="autoplayMovies" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_AUTOPLAYMOVIES_NAME" description="MOD_XBOX_SHADOWBOX_AUTOPLAYMOVIES_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="showMovieControls" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_SHOWMOVIECONTROLS_NAME" description="MOD_XBOX_SHADOWBOX_SHOWMOVIECONTROLS_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="enableKeys" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_ENABLEKEYS_NAME" description="MOD_XBOX_SHADOWBOX_ENABLEKEYS_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="skipSetup" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_SKIPSETUP_NAME" description="MOD_XBOX_SHADOWBOX_SKIPSETUP_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="useSizzle" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_USESIZZLE_NAME" description="MOD_XBOX_SHADOWBOX_USESIZZLE_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				
+				<field name="spacer3" type="spacer" hr="true" />
+				
+				<field name="animate" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_ANIMATE_NAME" description="MOD_XBOX_SHADOWBOX_ANIMATE_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="animSequence" type="list" default="sync" label="MOD_XBOX_SHADOWBOX_ANIMSEQUENCE_NAME" description="MOD_XBOX_SHADOWBOX_ANIMSEQUENCE_DESC">
+					<option value="wh">MOD_XBOX_SHADOWBOX_ANIMSEQUENCE_WH</option>
+					<option value="hw">MOD_XBOX_SHADOWBOX_ANIMSEQUENCE_HW</option>
+					<option value="sync">MOD_XBOX_SHADOWBOX_ANIMSEQUENCE_SYNC</option>
+				</field>
+				<field name="animateFade" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_ANIMATEFADE_NAME" description="MOD_XBOX_SHADOWBOX_ANIMATEFADE_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="fadeDuration" type="text" default="0.35" label="MOD_XBOX_SHADOWBOX_FADEDURATION_NAME" description="MOD_XBOX_SHADOWBOX_FADEDURATION_DESC" size="5" />
+				<field name="resizeDuration" type="text" default="0.35" label="MOD_XBOX_SHADOWBOX_RESIZEDURATION_NAME" description="MOD_XBOX_SHADOWBOX_RESIZEDURATION_DESC" size="5" />
+				<field name="slideshowDelay" type="text" default="0" label="MOD_XBOX_SHADOWBOX_SLIDESHOWDELAY_NAME" description="MOD_XBOX_SHADOWBOX_SLIDESHOWDELAY_DESC" size="5" />
+				
+				<field name="spacer4" type="spacer" hr="true" />
+				
+				<field name="displayNav" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_DISPLAYNAV_NAME" description="MOD_XBOX_SHADOWBOX_DISPLAYNAV_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="displayCounter" type="radio" default="1" label="MOD_XBOX_SHADOWBOX_DISPLAYCOUNTER_NAME" description="MOD_XBOX_SHADOWBOX_DISPLAYCOUNTER_DESC">
+					<option value="1">MOD_XBOX_SHADOWBOX_YES</option>
+					<option value="0">MOD_XBOX_SHADOWBOX_NO</option>
+				</field>
+				<field name="counterType" type="radio" default="default" label="MOD_XBOX_SHADOWBOX_COUNTERTYPE_NAME" description="MOD_XBOX_SHADOWBOX_COUNTERTYPE_DESC">
+					<option value="default">MOD_XBOX_SHADOWBOX_COUNTERTYPE_DEFAULT</option>
+					<option value="skip">MOD_XBOX_SHADOWBOX_COUNTERTYPE_SKIP</option>
+				</field>
+				<field name="counterLimit" type="text" default="10" label="MOD_XBOX_SHADOWBOX_COUNTERLIMIT_NAME" description="MOD_XBOX_SHADOWBOX_COUNTERLIMIT_DESC" size="2" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
